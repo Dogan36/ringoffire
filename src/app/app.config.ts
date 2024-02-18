@@ -1,8 +1,12 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [provideRouter(routes), provideClientHydration(), provideAnimationsAsync(), provideAnimationsAsync(), provideAnimationsAsync(), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())), provideAnimationsAsync(), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())), importProvidersFrom(provideFirebaseApp(() => initializeApp({"projectId":"fire-4334c","appId": "1:304801722924:web:0528d182c3ec69a5d65789","storageBucket":"fire-4334c.appspot.com","apiKey":"AIzaSyChb5AcmbIAwUoBIykhooj2X-ngEepUqVE","authDomain":"fire-4334c.firebaseapp.com","messagingSenderId":"304801722924"}))), importProvidersFrom(provideFirestore(() => getFirestore())),]
 };
