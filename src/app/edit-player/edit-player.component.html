@@ -1,4 +1,4 @@
-
+<div class="editPlayer">
     <h1 mat-card-title>Edit Player</h1>
     <div mat-card-content>
         <img class="profilPicture" [mat-dialog-close]="picture" *ngFor="let picture of allProfilPictures"
@@ -8,3 +8,4 @@
         <button mat-button (click)="dialogRef.close()">Close</button>
         <button mat-button color="warn" [mat-dialog-close]="'DELETE'">Delete Player</button>
     </div>
+</div>
