@@ -76,7 +76,6 @@ export class GameComponent {
     }
     else if (!this.game.pickCardAnimation) {
       this.game.gameOver=false
-      console.log(this.game.players)
       if (this.game.players.length > 1) {
         this.game.currentCard = this.game.stack.pop()!;
         this.game.pickCardAnimation = true;
@@ -111,12 +110,10 @@ export class GameComponent {
   openAddPlayerInfo(): void {
     const dialogRef = this.dialog.open(AddPlayerInfoComponent);
     dialogRef.afterClosed().subscribe(name => {
-      console.log("openInfo")
     })
   }
 
   getGamesRef() {
-    console.log(collection(this.firestore, 'games'))
     return collection(this.firestore, 'games')
   }
 
@@ -125,15 +122,12 @@ export class GameComponent {
   }
 
   async updateGame() {
-    console.log('game updated')
     let docRef = doc(collection(this.firestore, 'games'), this.gameID);
     await updateDoc(docRef, { ...this.game.toJson() });
   }
 
   editPlayer(playerID: number) {
-
     const dialogRef = this.dialog.open(EditPlayerComponent);
-
     dialogRef.afterClosed().subscribe((change: string) => {
       if (change) {
         if (change == 'DELETE') {
@@ -145,7 +139,6 @@ export class GameComponent {
         this.updateGame()
       }
     })
-
   }
 
   playerActiveIndex!: number
